@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "454131890054",
+    "project_id": "shelterspot-a185a",
+    "storage_bucket": "shelterspot-a185a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:454131890054:android:d55075474f2da1b0811e07",
+        "android_client_info": {
+          "package_name": "com.example.shelterspot"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "454131890054-h7p3g8483rj39f70897n8av2jghc2gvo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDPV-Z_qVGXwAgUHIV9qgviQgVjM8D7QNQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "454131890054-h7p3g8483rj39f70897n8av2jghc2gvo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
