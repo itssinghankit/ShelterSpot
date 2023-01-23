@@ -4,35 +4,350 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HotelHomeDetUpload">
+    tools:context=".HotelHomeDetUpload"
+    android:background="@color/white">
 
-    <ImageView
-        android:id="@+id/image"
-        android:layout_width="275dp"
-        android:layout_height="262dp"
-        app:layout_constraintBottom_toTopOf="@+id/selectImage"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/selectImage"
-        android:layout_width="195dp"
-        android:layout_height="62dp"
-        android:layout_marginBottom="52dp"
-        android:text="Button"
-        app:layout_constraintBottom_toTopOf="@+id/uploadImage"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/uploadImage"
-        android:layout_width="169dp"
-        android:layout_height="60dp"
-        android:layout_marginBottom="96dp"
-        android:text="Button"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+            <TextView
+                android:id="@+id/detailtxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Details"
+                android:textSize="35sp"
+                android:textColor="@color/darkpurple"
+                android:textStyle="bold"
+                android:gravity="center_horizontal"
+                android:layout_marginTop="35dp"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:id="@+id/textField"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Owner Name"
+                app:hintTextColor="@color/purple"
+                app:boxStrokeColor="@color/purple"
+                app:boxBackgroundColor="@color/white"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="50dp"
+                android:textColorHint="@color/grey"
+                app:layout_constraintTop_toBottomOf="@id/detailtxt"
+                app:startIconDrawable="@drawable/person"
+                app:startIconTint="@color/grey">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/ownerName"
+                    android:textColor="@color/darkpurple"
+                    android:text=""
+                    android:maxLines="1"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:id="@+id/textField2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Hotel Name"
+                app:hintTextColor="@color/purple"
+                app:boxStrokeColor="@color/purple"
+                app:boxBackgroundColor="@color/white"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="15dp"
+                android:textColorHint="@color/grey"
+                app:layout_constraintTop_toBottomOf="@id/textField"
+                app:startIconDrawable="@drawable/hotel"
+                app:startIconTint="@color/grey">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/hotelName"
+                    android:textColor="@color/darkpurple"
+                    android:text=""
+                    android:maxLines="1"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:id="@+id/textField3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="State"
+                app:hintTextColor="@color/purple"
+                app:boxStrokeColor="@color/purple"
+                app:boxBackgroundColor="@color/white"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginTop="15dp"
+                android:textColorHint="@color/grey"
+                app:layout_constraintTop_toBottomOf="@id/textField2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/textField4"
+                app:startIconDrawable="@drawable/state"
+                app:startIconTint="@color/grey">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/state"
+                    android:textColor="@color/darkpurple"
+                    android:text=""
+                    android:maxLines="1"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:id="@+id/textField4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="City"
+                app:hintTextColor="@color/purple"
+                app:boxStrokeColor="@color/purple"
+                app:boxBackgroundColor="@color/white"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="15dp"
+                android:textColorHint="@color/grey"
+                app:layout_constraintTop_toBottomOf="@id/textField2"
+                app:layout_constraintStart_toEndOf="@id/textField3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:startIconDrawable="@drawable/city"
+                app:startIconTint="@color/grey">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/city"
+                    android:textColor="@color/darkpurple"
+                    android:text=""
+                    android:maxLines="1"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:id="@+id/textField5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Locality / Area"
+                app:hintTextColor="@color/purple"
+                app:boxStrokeColor="@color/purple"
+                app:boxBackgroundColor="@color/white"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="15dp"
+                android:textColorHint="@color/grey"
+                app:layout_constraintTop_toBottomOf="@id/textField4"
+                app:startIconDrawable="@drawable/ic_baseline_location_on_24"
+                app:startIconTint="@color/grey">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/area"
+                    android:textColor="@color/darkpurple"
+                    android:text=""
+                    android:maxLines="1"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:id="@+id/textField6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Pin Code"
+                app:hintTextColor="@color/purple"
+                app:boxStrokeColor="@color/purple"
+                app:boxBackgroundColor="@color/white"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="15dp"
+                android:textColorHint="@color/grey"
+                app:layout_constraintTop_toBottomOf="@id/textField5"
+                app:startIconDrawable="@drawable/ic_baseline_fiber_pin_24"
+                app:startIconTint="@color/grey">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/pincode"
+                    android:textColor="@color/darkpurple"
+                    android:text=""
+                    android:maxLines="1"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:id="@+id/textField7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Contact No"
+                app:hintTextColor="@color/purple"
+                app:boxStrokeColor="@color/purple"
+                app:boxBackgroundColor="@color/white"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="15dp"
+                android:textColorHint="@color/grey"
+                app:layout_constraintTop_toBottomOf="@id/textField6"
+                app:startIconDrawable="@drawable/mobile"
+                app:startIconTint="@color/grey">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/mobile"
+                    android:textColor="@color/darkpurple"
+                    android:text=""
+                    android:maxLines="1"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:id="@+id/textField8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Price per Room"
+                app:hintTextColor="@color/purple"
+                app:boxStrokeColor="@color/purple"
+                app:boxBackgroundColor="@color/white"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="15dp"
+                android:textColorHint="@color/grey"
+                app:layout_constraintTop_toBottomOf="@id/textField7"
+                app:startIconDrawable="@drawable/rupee"
+                app:startIconTint="@color/grey">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/price"
+                    android:textColor="@color/darkpurple"
+                    android:text=""
+                    android:maxLines="1"
+                    android:inputType="number"/>
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:id="@+id/textField9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Rooms Available"
+                app:hintTextColor="@color/purple"
+                app:boxStrokeColor="@color/purple"
+                app:boxBackgroundColor="@color/white"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="15dp"
+                android:textColorHint="@color/grey"
+                app:layout_constraintTop_toBottomOf="@id/textField8"
+                app:startIconDrawable="@drawable/home"
+                app:startIconTint="@color/grey">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/rooms"
+                    android:textColor="@color/darkpurple"
+                    android:text=""
+                    android:maxLines="1"
+                    android:inputType="number"/>
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:id="@+id/textField10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Short Description"
+                app:hintTextColor="@color/purple"
+                app:boxStrokeColor="@color/purple"
+                app:boxBackgroundColor="@color/white"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="15dp"
+                android:textColorHint="@color/grey"
+                app:layout_constraintTop_toBottomOf="@id/textField9"
+                app:startIconDrawable="@drawable/description"
+                app:startIconTint="@color/grey">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/description"
+                    android:textColor="@color/darkpurple"
+                    android:text=""
+                    android:inputType="number"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:text="Select Photo"
+                android:id="@+id/selectImage"
+                app:layout_constraintTop_toBottomOf="@id/textField10"
+                app:layout_constraintStart_toStartOf="parent"
+                app:cornerRadius="10dp"
+                android:textSize="16sp"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="20dp"
+                android:paddingTop="5dp"
+                android:backgroundTint="@color/darkpurple"
+                android:textColor="@color/white"/>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:id="@+id/imgcontianer"
+                app:layout_constraintTop_toBottomOf="@id/selectImage"
+                android:layout_marginEnd="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="15dp"
+                app:cardCornerRadius="30dp"
+                android:elevation="8dp">
+
+                <ImageView
+                    android:id="@+id/image"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    app:layout_constraintTop_toBottomOf="@+id/selectImage"
+                    tools:srcCompat="@drawable/hotelimg3"
+                    android:scaleType="centerCrop"/>
+            </androidx.cardview.widget.CardView>
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/signup"
+                android:layout_marginTop="60dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="50dp"
+                app:strokeColor="@color/black"
+                app:cornerRadius="30dp"
+                android:text="signup"
+                android:textSize="18sp"
+                android:padding="15dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imgcontianer"
+                android:gravity="center"
+                android:backgroundTint="@color/darkpurple"
+                android:textColor="@color/white" />
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                android:indeterminateTint="@color/darkpurple"
+                app:layout_constraintTop_toBottomOf="@id/imgcontianer"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginTop="60dp"
+                android:layout_marginBottom="50dp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

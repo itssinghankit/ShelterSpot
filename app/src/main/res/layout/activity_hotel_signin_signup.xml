@@ -28,7 +28,7 @@
         android:id="@+id/uppertxt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Welcome!\n to Shelter$pot"
+        android:text="Welcome Hotels!\n to Shelter$pot"
         android:textSize="35sp"
         android:textColor="@color/black"
         app:layout_constraintTop_toBottomOf="@id/upperimage"
@@ -40,7 +40,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/lowertxt"
         app:layout_constraintTop_toBottomOf="@id/uppertxt"
-        android:text="Best way to book Hotels Anytime\n Anywhere.."
+        android:text="A hasselfree way to get register\n your hotel.."
         android:textSize="20sp"
         android:textColor="#8E8D8D"
         android:gravity="center"
@@ -85,18 +85,5 @@
         android:backgroundTint="@color/darkpurple"
         android:textColor="@color/white"
         app:iconTint="@color/white"/>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="as Hotel?"
-        android:id="@+id/hotel"
-        app:layout_constraintTop_toBottomOf="@id/signup"
-        android:textSize="20sp"
-        android:textColor="@color/darkpurple"
-        android:gravity="right"
-        android:layout_marginRight="35dp"
-        android:layout_marginTop="15dp"
-        app:layout_constraintEnd_toEndOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

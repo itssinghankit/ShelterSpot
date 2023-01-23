@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HotelSignup"
+    tools:context=".HotelSignin"
     android:background="@color/purple">
 
     <ImageView
@@ -15,7 +15,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_margin="20dp"/>
-
     <TextView
         android:id="@+id/b"
         android:layout_width="match_parent"
@@ -23,19 +22,20 @@
         android:textSize="50sp"
         android:textStyle="bold"
         android:textColor="@color/darkpurple"
-        android:text="Please Fill"
+        android:text="Welcome"
         app:layout_constraintTop_toBottomOf="@id/back"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginTop="20dp"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="45sp"
         android:textStyle="bold"
         android:textColor="@color/lightpurple"
-        android:text="Details"
+        android:text="back!"
         app:layout_constraintTop_toBottomOf="@id/b"
-        android:layout_marginStart="30dp" />
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="0dp"/>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -47,10 +47,10 @@
             android:layout_height="wrap_content"
             android:background="@drawable/round">
             <TextView
-                android:id="@+id/signuptxt"
+                android:id="@+id/signintxt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Sign up"
+                android:text="Sign in"
                 android:textSize="35dp"
                 android:textColor="@color/darkpurple"
                 android:textStyle="bold"
@@ -70,8 +70,9 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
                 android:layout_marginTop="50dp"
+                android:enabled="true"
                 android:textColorHint="@color/grey"
-                app:layout_constraintTop_toBottomOf="@id/signuptxt"
+                app:layout_constraintTop_toBottomOf="@id/signintxt"
                 app:startIconDrawable="@drawable/email"
                 app:startIconTint="@color/grey">
 
@@ -80,7 +81,6 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/email"
                     android:textColor="@color/darkpurple"
-                    android:inputType="textEmailAddress"
                     android:text=""/>
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -101,7 +101,7 @@
                 app:passwordToggleEnabled="true"
                 app:passwordToggleTint="@color/grey">
 
-                <com.google.android.material.textfield.TextInputEditText
+                <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="@color/black"
@@ -110,52 +110,53 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputLayout
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:id="@+id/textField3"
-                android:layout_width="match_parent"
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:hint="Confirm Password"
-                app:hintTextColor="@color/purple"
-                app:boxStrokeColor="@color/purple"
-                app:boxBackgroundColor="@color/white"
-                android:layout_margin="20dp"
-                android:textColorHint="@color/grey"
+                android:id="@+id/forgetPassword"
+                android:text="Forget Password?"
+                android:textColor="@color/darkpurple"
                 app:layout_constraintTop_toBottomOf="@id/textField2"
-                app:startIconDrawable="@drawable/password"
-                app:startIconTint="@color/grey"
-                app:passwordToggleEnabled="true"
-                app:passwordToggleTint="@color/grey">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/black"
-                    android:id="@+id/confirmPassword"
-                    android:text=""/>
-
-            </com.google.android.material.textfield.TextInputLayout>
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:textSize="18dp"/>
 
             <com.google.android.material.button.MaterialButton
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/next"
-                android:layout_marginTop="60dp"
+                android:id="@+id/signin"
+                android:layout_marginTop="90dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
                 android:layout_marginBottom="50dp"
                 app:strokeColor="@color/black"
                 app:cornerRadius="30dp"
-                android:text="next"
+                android:text="sign in"
                 android:textSize="18sp"
                 android:padding="15dp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textField3"
+                app:layout_constraintTop_toBottomOf="@id/textField2"
                 android:gravity="center"
                 android:backgroundTint="@color/darkpurple"
-                android:textColor="@color/white" />
+                android:textColor="@color/white"
+                android:visibility="visible"/>
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                android:indeterminateTint="@color/darkpurple"
+                app:layout_constraintTop_toBottomOf="@id/textField2"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginTop="90dp"
+                android:layout_marginBottom="50dp" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 
     </ScrollView>
 

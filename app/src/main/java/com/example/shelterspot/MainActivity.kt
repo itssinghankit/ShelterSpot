@@ -26,16 +26,21 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        binding.hotel.setOnClickListener {
+            val intent = Intent(this, HotelSigninSignup::class.java)
+            startActivity(intent)
+        }
+
     }
 
-    public override fun onStart() {
-        auth=FirebaseAuth.getInstance()
-        super.onStart()
-        val currentUser=auth.currentUser
-        if(currentUser!=null){
-            val intent=Intent(this,HotelHomeDetUpload::class.java)
-            startActivity(intent)
-            finish()
-        }
-    }
+//    public override fun onStart() {
+//        auth=FirebaseAuth.getInstance()
+//        super.onStart()
+//        val currentUser=auth.currentUser
+//        if(currentUser!=null){
+//            val intent=Intent(this,HotelHomeDetUpload::class.java)
+//            startActivity(intent)
+//            finish()
+//        }
+//    }
 }
