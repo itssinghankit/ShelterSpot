@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
+    tools:context=".HotelSigninSignup"
     android:background="@color/white">
 
     <ImageView
         android:id="@+id/upperimage"
         android:layout_width="match_parent"
         android:layout_height="300dp"
-        android:src="@drawable/vacation"
+        android:src="@drawable/hotelimg"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="50dp" />
@@ -61,7 +61,7 @@
         android:padding="15dp"
         android:paddingEnd="40dp"
         app:layout_constraintBottom_toTopOf="@id/signup"
-         android:gravity="center"
+        android:gravity="center"
         android:backgroundTint="@color/purple"
         android:textColor="@color/white"
         app:iconTint="@color/white"/>
