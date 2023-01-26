@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HotelHomeDetUpload"
+    tools:context=".EditHotelDetails"
     android:background="@color/whitebg">
 
     <ScrollView
@@ -19,7 +19,7 @@
                 android:id="@+id/detailtxt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Details"
+                android:text="Edit Details"
                 android:textSize="35sp"
                 android:textColor="@color/darkpurple"
                 android:textStyle="bold"
@@ -51,7 +51,7 @@
                     android:textColor="@color/darkpurple"
                     android:text=""
                     android:maxLines="1"
-                    android:inputType="textCapWords"/>
+                    android:inputType="textCapWords" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -313,7 +313,7 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="15dp"
                 app:cardCornerRadius="30dp"
-                app:cardElevation="12dp">
+                android:elevation="8dp">
 
                 <ImageView
                     android:id="@+id/image"
@@ -327,14 +327,14 @@
             <com.google.android.material.button.MaterialButton
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/signup"
+                android:id="@+id/save"
                 android:layout_marginTop="60dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
                 android:layout_marginBottom="50dp"
                 app:strokeColor="@color/black"
                 app:cornerRadius="30dp"
-                android:text="signup"
+                android:text="save"
                 android:textSize="18sp"
                 android:padding="15dp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -357,4 +357,5 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

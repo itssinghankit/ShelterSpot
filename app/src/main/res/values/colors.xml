@@ -12,4 +12,5 @@
     <color name="lightpurple">#ebdcff</color>
     <color name="darkpurple">#260059</color>
     <color name="grey">#626262</color>
+    <color name="whitebg">#F9F9F9</color>
 </resources>

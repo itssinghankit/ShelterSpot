@@ -15,12 +15,36 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+
+
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="300dp"
                 android:src="@drawable/hotelimg3"
                 android:scaleType="centerCrop"
                 android:id="@+id/image"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/blackback"
+                android:scaleType="centerCrop"
+                android:id="@+id/back"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_baseline_edit_24"
+                android:scaleType="centerCrop"
+                android:id="@+id/edit"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 />
 
@@ -57,7 +81,7 @@
                 android:text="State"
                 app:layout_constraintTop_toBottomOf="@id/hotelName"
                 android:textSize="20sp"
-                android:layout_marginStart="8dp"
+                android:layout_marginStart="3dp"
                 app:layout_constraintStart_toEndOf="@id/city"
                 android:layout_marginTop="10dp"
                 android:textColor="@color/grey"/>
@@ -67,7 +91,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/description"
                 android:text="sssssssss sssss sssss sssssssssss ssssss ssoremsssssssssss ssssss ssssss sssss ssssss ssssssss s ssssss s ssssssss s sssssss"
-                android:textSize="22sp"
+                android:textSize="18sp"
                 app:layout_constraintTop_toBottomOf="@id/state"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
