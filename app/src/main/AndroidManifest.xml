@@ -13,6 +13,13 @@
         android:theme="@style/Theme.ShelterSpot"
         tools:targetApi="31">
         <activity
+            android:name=".EXAMPLE"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".EditHotelDetails"
             android:exported="false">
             <meta-data
