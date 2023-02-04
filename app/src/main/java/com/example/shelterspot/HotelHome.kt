@@ -3,6 +3,7 @@ package com.example.shelterspot
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.bumptech.glide.Glide
 import com.example.shelterspot.databinding.ActivityHotelHomeBinding
 import com.example.shelterspot.databinding.ActivityHotelSigninBinding
 import com.google.firebase.auth.FirebaseAuth
@@ -25,14 +26,16 @@ class HotelHome : AppCompatActivity() {
 
     val email=intent.getStringExtra("email").toString()
 
-        var username=""
-        var i=0
-        while(email[i]!='@'){
-            username+=email[i]
-            i++
-        }
+//        var username=""
+//        var i=0
+//        while(email[i]!='@'){
+//            username+=email[i]
+//            i++
+//        }
 
-    fetchdata(username)
+        val userId=auth.currentUser!!.uid
+
+    fetchdata(userId)
 
     binding.back.setOnClickListener{
         val intent=Intent(this,HotelSignin::class.java)
@@ -55,9 +58,8 @@ class HotelHome : AppCompatActivity() {
 
     }
 
-    private fun fetchdata(username: String) {
-
-        database.child(username).get().addOnSuccessListener {
+    private fun fetchdata(userId: String) {
+        database.child(userId).get().addOnSuccessListener {
             binding.hotelName.setText(it.child("hotelname").value.toString())
             binding.city.setText(it.child("city").value.toString()+",")
             binding.state.setText(it.child("state").value.toString())
@@ -68,6 +70,7 @@ class HotelHome : AppCompatActivity() {
             binding.pincode.setText(it.child("pincode").value.toString())
             binding.area.setText(it.child("area").value.toString())
             binding.room.setText(it.child("rooms").value.toString())
+            Glide.with(this).load(it.child("url").value.toString()).centerCrop().into(binding.image)
         }
 
     }

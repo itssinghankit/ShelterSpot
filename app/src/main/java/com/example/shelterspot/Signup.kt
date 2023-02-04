@@ -24,6 +24,7 @@ class Signup : AppCompatActivity() {
 
             if(binding.email.text.toString().isNotEmpty()&&binding.password.text.toString().isNotEmpty()&& binding.confirmPassword.text.toString().isNotEmpty()){
                 if(binding.password.text.toString()==binding.confirmPassword.text.toString()){
+
                     val intent =Intent(this,SignupDetails::class.java)
                       intent.putExtra("email",binding.email.text.toString())
                       intent.putExtra("password",binding.password.text.toString())

@@ -26,55 +26,87 @@ class SignupDetails : AppCompatActivity() {
         val email=intent.getStringExtra("email").toString()
         val password=intent.getStringExtra("password").toString()
 
-        println("$email + $password")
-
         binding.signup.setOnClickListener{
-            if(binding.name.text.toString().isNotEmpty()&&binding.mobile.text.toString().isNotEmpty()){
-                if(binding.mobile.text.toString().length==10){
 
-                                //For saving details of customer
+            auth.createUserWithEmailAndPassword(email, password)
+                .addOnCompleteListener(this) { task ->
 
-                    val cstmdetobj=CstmrDetData(binding.name.text.toString(),binding.mobile.text.toString())
-                    database=FirebaseDatabase.getInstance().getReference("customer")
+                    if (task.isSuccessful) {
 
-                                    //For unique username
-                    var username=""
-                    var i=0
-                    while(email[i]!='@'){
-                        username = username + email[i]
-                        i++
-                    }
+                        auth.signInWithEmailAndPassword(email, password)
+                        val userId=auth.currentUser!!.uid
+                        val cstmdetobj=CstmrDetData(binding.name.text.toString(),binding.mobile.text.toString(),email)
+                        database=FirebaseDatabase.getInstance().getReference("customer")
+                        database.child(userId).setValue(cstmdetobj).addOnCompleteListener {
 
-                    database.child(username).setValue(cstmdetobj).addOnCompleteListener {
-                        if(it.isSuccessful){
-
-                            auth.createUserWithEmailAndPassword(email, password)
-                                .addOnCompleteListener(this) { task ->
-                                    if (task.isSuccessful) {
-                                        Toast.makeText(this, "Successfully Registered", Toast.LENGTH_SHORT).show()
-                                        val intent= Intent(this,Signin::class.java)
-                                        startActivity(intent)
-                                        finish()
-
-                                    } else {
-                                        Toast.makeText(this, "Failed, Try again", Toast.LENGTH_SHORT).show()
-
-                                    }
-                                }
-
-                        }else{
-                            Toast.makeText(this, "Failed, try Again", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(this, "Successfully Registered", Toast.LENGTH_SHORT).show()
+                            val intent= Intent(this,Signin::class.java)
+                            startActivity(intent)
+                            finish()
                         }
+
+                    } else {
+                        Toast.makeText(this, "Failed, Try again", Toast.LENGTH_SHORT).show()
+
                     }
-
-
-                }else{
-                    Toast.makeText(this, "Enter Correct Number", Toast.LENGTH_SHORT).show()
                 }
-            }else{
-                Toast.makeText(this, "Fields can't be Empty", Toast.LENGTH_SHORT).show()
-            }
+
         }
+
+//        println("$email + $password")
+//
+//        binding.signup.setOnClickListener{
+//            if(binding.name.text.toString().isNotEmpty()&&binding.mobile.text.toString().isNotEmpty()){
+//                if(binding.mobile.text.toString().length==10){
+//
+//                                  //For saving details of customer
+//
+//                    val cstmdetobj=CstmrDetData(binding.name.text.toString(),binding.mobile.text.toString())
+//                    database=FirebaseDatabase.getInstance().getReference("customer")
+//
+//                                    //For unique username
+////                    var username=""
+////                    var i=0
+////                    while(email[i]!='@'){
+////                        username = username + email[i]
+////                        i++
+////                    }
+//
+//
+//                    .addOnCompleteListener {
+//                        if(it.isSuccessful){
+//
+//                            auth.createUserWithEmailAndPassword(email, password)
+//                                .addOnCompleteListener(this) { task ->
+//
+//                                    val userId=auth.uid
+//                                    database.child(userId).setValue(cstmdetobj)
+//
+//                                    if (task.isSuccessful) {
+//                                        Toast.makeText(this, "Successfully Registered", Toast.LENGTH_SHORT).show()
+//                                        val intent= Intent(this,Signin::class.java)
+//                                        startActivity(intent)
+//                                        finish()
+//
+//                                    } else {
+//                                        Toast.makeText(this, "Failed, Try again", Toast.LENGTH_SHORT).show()
+//
+//                                    }
+//                                }
+//
+//                        }else{
+//                            Toast.makeText(this, "Failed, try Again", Toast.LENGTH_SHORT).show()
+//                        }
+//                    }
+//
+//
+//                }else{
+//                    Toast.makeText(this, "Enter Correct Number", Toast.LENGTH_SHORT).show()
+//                }
+//            }else{
+//                Toast.makeText(this, "Fields can't be Empty", Toast.LENGTH_SHORT).show()
+//            }
+//        }
 
     }
 }
