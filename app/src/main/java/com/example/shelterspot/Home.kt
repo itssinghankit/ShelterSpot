@@ -20,17 +20,14 @@ class Home : AppCompatActivity() {
 
     private lateinit var binding:ActivityHomeBinding
     private lateinit var database:DatabaseReference
-//    private lateinit var auth:FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding= ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-//        auth=FirebaseAuth.getInstance()
         database=FirebaseDatabase.getInstance().getReference("hotels")
 
-//        val userId=auth.currentUser!!.uid
         binding.recycler.layoutManager=LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false)
         val dataarrayList=ArrayList<HotelDetDataClass>()
 
@@ -40,23 +37,13 @@ class Home : AppCompatActivity() {
                     for(datasnapshot in snapshot.children){
                         val dataoflist=datasnapshot.getValue(HotelDetDataClass::class.java)
                         dataarrayList.add(dataoflist!!)
-                        println(dataoflist.toString())
                     }
                     binding.recycler.adapter=RecAdapter(dataarrayList)    //this adapter should be present here as if it is declared down maybe if there is any issue with internet, dataarraylist may be empty but here it will only called up if data snapshot exists.
                 }
             }
             override fun onCancelled(error: DatabaseError) {
             }
-
         })
 
-
-
-
-
-
-
-
     }
-
 }
