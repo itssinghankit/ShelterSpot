@@ -5,16 +5,44 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Home"
-    android:background="@color/whitebg">
+    android:background="@color/white">
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/searchCity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/recycler"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:hint="Search city"
+        android:textColorHint="@color/grey"
+        android:textColor="@color/black"
+        android:layout_margin="12dp"
+        android:textSize="18sp"
+        android:padding="16dp"
+        android:background="@drawable/comproundbggrey" />
+    <ImageView
+        android:id="@+id/searchbtn"
+        android:layout_width="55dp"
+        android:layout_height="0dp"
+        android:src="@drawable/ic_baseline_search_24"
+        app:layout_constraintEnd_toEndOf="@id/searchCity"
+        app:layout_constraintTop_toTopOf="@id/searchCity"
+        app:layout_constraintBottom_toBottomOf="@id/searchCity"
+        android:paddingEnd="12dp"
+        android:paddingStart="12dp"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:paddingTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:listitem="@layout/recycleritem"/>
+        app:layout_constraintTop_toBottomOf="@id/searchCity"
+        tools:listitem="@layout/recycleritem"
+        android:background="@color/whitebg"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -99,7 +99,7 @@ class HotelHomeDetUpload : AppCompatActivity() {
                 storageref.child(System.currentTimeMillis().toString()).putFile(uri)
                     .addOnSuccessListener { task->
                         task.metadata!!.reference!!.downloadUrl.addOnSuccessListener { uriUrl->
-                            val datobj=HotelDetDataClass(binding.ownerName.text.toString(),binding.hotelName.text.toString(),binding.state.text.toString(),binding.city.text.toString(),binding.area.text.toString(),binding.pincode.text.toString(),binding.mobile.text.toString(),email, binding.price.text.toString(),binding.rooms.text.toString(),binding.description.text.toString(),uriUrl.toString())
+                            val datobj=HotelDetDataClass(binding.ownerName.text.toString(),binding.hotelName.text.toString(),binding.state.text.toString(),binding.city.text.toString(),binding.area.text.toString(),binding.pincode.text.toString(),binding.mobile.text.toString(),email, binding.price.text.toString(),binding.rooms.text.toString(),binding.description.text.toString(),uriUrl.toString(),userId)
                             database.child(userId).setValue(datobj).addOnCompleteListener {
                                 if(it.isSuccessful){
                                     Toast.makeText(this, "url uploaded", Toast.LENGTH_SHORT).show()
