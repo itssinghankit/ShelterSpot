@@ -35,8 +35,7 @@ class Signin : AppCompatActivity() {
                 .addOnCompleteListener(this) { task ->
                     if (task.isSuccessful) {
 
-                        val intent = Intent(this,Home::class.java)
-                        intent.putExtra("email",email)
+                        val intent = Intent(this,CHome::class.java)
                         startActivity(intent)
                         finish()
 

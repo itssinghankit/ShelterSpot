@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/_250sdp"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<androidx.cardview.widget.CardView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:cardUseCompatPadding="true"
+    app:cardElevation="2dp"
+    app:cardCornerRadius="@dimen/_10sdp">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_10sdp">
+        <androidx.cardview.widget.CardView
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_150sdp"
+            app:cardCornerRadius="@dimen/_10sdp"
+            android:id="@+id/imagecontainer">
+    <ImageView
+        android:layout_width="match_parent"
+        android:id="@+id/image"
+        android:layout_height="@dimen/_150sdp"
+        android:src="@drawable/hotelimg3"
+        app:layout_constraintTop_toTopOf="parent"
+        android:scaleType="centerCrop"/>
+        </androidx.cardview.widget.CardView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/hotelName"
+            android:text="Hotel Name"
+            app:layout_constraintTop_toBottomOf="@id/imagecontainer"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textSize="@dimen/_18sdp"
+            android:textColor="@color/black"
+            android:layout_marginTop="@dimen/_8sdp"
+            />
+        <TextView
+            android:id="@+id/city"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="city,"
+            app:layout_constraintTop_toBottomOf="@id/hotelName"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textSize="@dimen/_12sdp"
+            android:textColor="@color/grey"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:drawableLeft="@drawable/ic_baseline_location_on_24"
+            android:drawablePadding="@dimen/_3sdp"/>
+        <TextView
+            android:id="@+id/state"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="State"
+            app:layout_constraintTop_toBottomOf="@id/hotelName"
+            app:layout_constraintStart_toEndOf="@id/city"
+            android:textSize="@dimen/_12sdp"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:textColor="@color/grey"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/description"
+            app:layout_constraintTop_toBottomOf="@id/state"
+            android:maxLines="2"
+            android:textSize="@dimen/_11sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:textColor="@color/grey"
+            android:ellipsize="end"
+            android:text="welcome to our new hotel booking app . this is the best way to book your app so book your hotel"/>
+        <TextView
+            android:id="@+id/price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="300"
+            android:drawableLeft="@drawable/rupee"
+            app:layout_constraintTop_toBottomOf="@id/description"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textSize="@dimen/_22ssp"
+            android:textStyle="bold"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginEnd="3dp"
+            android:textColor="#260059"/>
+        <TextView
+            android:id="@+id/Pricetxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="/per day"
+            app:layout_constraintTop_toBottomOf="@id/description"
+            app:layout_constraintStart_toEndOf="@id/price"
+            android:textSize="@dimen/_11ssp"
+            android:layout_marginTop="@dimen/_18sdp"
+            android:layout_marginStart="@dimen/_3sdp"
+            android:textColor="#260059"
+            android:paddingBottom="16dp"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>
