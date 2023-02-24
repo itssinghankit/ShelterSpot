@@ -7,6 +7,7 @@ import com.bumptech.glide.Glide
 import com.example.shelterspot.databinding.ActivityChotelDetailsBinding
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import fragments.BookFragment
 
 class CHotelDetails : AppCompatActivity() {
 
@@ -29,7 +30,7 @@ class CHotelDetails : AppCompatActivity() {
 
         }
         binding.back.setOnClickListener{
-            val intent= Intent(this,Home::class.java)
+            val intent= Intent(this,BookFragment::class.java)
             startActivity(intent)
         }
 

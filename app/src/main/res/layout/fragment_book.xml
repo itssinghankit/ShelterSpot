@@ -1,13 +1,50 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="fragments.BookFragment">
+    tools:context="fragments.BookFragment"
+    android:background="@color/white">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/searchCity"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="book" />
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        android:background="@drawable/comproundbggrey"
+        android:hint="Search city"
+        android:padding="16dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/grey"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@id/recycler"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:maxLines="1"/>
 
-</FrameLayout>
+    <ImageView
+        android:id="@+id/searchbtn"
+        android:layout_width="55dp"
+        android:layout_height="0dp"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:src="@drawable/ic_baseline_search_24"
+        app:layout_constraintBottom_toBottomOf="@id/searchCity"
+        app:layout_constraintEnd_toEndOf="@id/searchCity"
+        app:layout_constraintTop_toTopOf="@id/searchCity" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/whitebg"
+        android:paddingTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/searchCity"
+        tools:listitem="@layout/recycleritem" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
