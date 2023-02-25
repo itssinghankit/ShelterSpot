@@ -18,11 +18,11 @@
                 android:id="@+id/hellotxt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_10sdp"
-                android:layout_marginTop="@dimen/_18sdp"
+                android:layout_marginStart="@dimen/_9sdp"
+                android:layout_marginTop="@dimen/_19sdp"
+                android:fontFamily="@font/montserrat_semibold"
                 android:text="Hello"
-                android:textStyle="bold"
-                android:textColor="@color/black"
+                android:textColor="@color/grey"
                 android:textSize="@dimen/_16ssp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -31,11 +31,12 @@
                 android:id="@+id/name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginStart="@dimen/_9sdp"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:fontFamily="@font/montserrat_semibold"
                 android:text="Name Sirname"
                 android:textColor="@color/black"
-                android:textSize="@dimen/_24ssp"
-                android:textStyle="bold"
+                android:textSize="@dimen/_21ssp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/hellotxt" />
 
@@ -43,8 +44,8 @@
                 android:id="@+id/cardView"
                 android:layout_width="@dimen/_30sdp"
                 android:layout_height="@dimen/_30sdp"
-                android:layout_marginTop="@dimen/_20sdp"
-                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_22sdp"
+                android:layout_marginEnd="@dimen/_9sdp"
                 app:cardCornerRadius="@dimen/_15sdp"
                 app:cardElevation="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -62,20 +63,20 @@
                 android:id="@+id/searchCity"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_10sdp"
-                android:layout_marginTop="@dimen/_18sdp"
-                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_marginStart="@dimen/_9sdp"
+                android:layout_marginTop="@dimen/_31sdp"
+                android:layout_marginEnd="@dimen/_9sdp"
                 android:background="@drawable/comproundbggrey"
-                android:hint="Search city"
-                android:textColorHighlight="@color/darkpurple"
-                android:padding="@dimen/_10sdp"
+                android:fontFamily="@font/montserrat_regular"
+                android:hint="Search city..."
+                android:padding="@dimen/_11sdp"
                 android:textColor="@color/black"
+                android:textColorHighlight="@color/darkpurple"
                 android:textColorHint="@color/grey"
-                android:textSize="18sp"
+                android:textSize="@dimen/_11ssp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/name"
-                />
+                app:layout_constraintTop_toBottomOf="@id/name" />
 
             <ImageView
                 android:id="@+id/searchbtn"
@@ -93,7 +94,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_10sdp"
-                android:layout_marginTop="@dimen/_24sdp"
+                android:layout_marginTop="@dimen/_37sdp"
+                android:fontFamily="@font/montserrat_semibold"
                 android:text="Locations"
                 android:textColor="@color/black"
                 android:textSize="@dimen/_16ssp"
@@ -105,7 +107,9 @@
                 android:id="@+id/locations"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_12sdp"
                 android:orientation="horizontal"
+                android:scrollbars="none"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/loctxt">
@@ -113,75 +117,76 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginStart="@dimen/_10sdp"
-                    android:layout_marginEnd="@dimen/_10sdp"
-                    android:orientation="horizontal"
-                    android:scrollbars="none">
+                    android:orientation="horizontal">
 
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/delhi"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="@dimen/_8sdp"
-                        android:paddingStart="@dimen/_8sdp"
-                        android:paddingEnd="@dimen/_8sdp"
+                        android:layout_height="@dimen/_30sdp"
+                        android:layout_marginStart="@dimen/_12sdp"
+                        android:fontFamily="@font/montserrat_regular"
                         android:text="Delhi"
-                        android:textColor="@color/darkpurple"
-                        app:cornerRadius="@dimen/_20sdp"
-                        app:backgroundTint="@color/lightpurple"
-                        app:rippleColor="@color/purple" />
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_9ssp"
+                        app:backgroundTint="@color/lightgrey"
+                        app:cornerRadius="@dimen/_20sdp" />
 
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/maharashtra"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="@dimen/_8sdp"
-                        android:backgroundTint="@color/lightpurple"
+                        android:layout_height="@dimen/_30sdp"
+                        android:layout_marginStart="@dimen/_12sdp"
+                        android:fontFamily="@font/montserrat_regular"
                         android:paddingStart="@dimen/_8sdp"
                         android:paddingEnd="@dimen/_8sdp"
                         android:text="maharashtra"
-                        android:textColor="@color/darkpurple"
-                        app:cornerRadius="@dimen/_20sdp"
-                        app:rippleColor="@color/purple" />
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_9ssp"
+                        app:backgroundTint="@color/lightgrey"
+                        app:cornerRadius="@dimen/_20sdp" />
 
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/uttarpradesh"
-                       android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="@dimen/_8sdp"
-                        android:backgroundTint="@color/lightpurple"
-                        android:paddingStart="@dimen/_8sdp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_30sdp"
+                        android:layout_marginStart="@dimen/_12sdp"
+                        android:fontFamily="@font/montserrat_regular"
+                        android:paddingStart="@dimen/_12sdp"
                         android:paddingEnd="@dimen/_8sdp"
                         android:text="Uttar Pradesh"
-                        android:textColor="@color/darkpurple"
-                        app:cornerRadius="@dimen/_20sdp"
-                        app:rippleColor="@color/purple" />
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_9ssp"
+                        app:backgroundTint="@color/lightgrey"
+                        app:cornerRadius="@dimen/_20sdp" />
 
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/goa"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="@dimen/_8sdp"
-                        android:backgroundTint="@color/lightpurple"
-                        android:paddingStart="@dimen/_8sdp"
+                        android:layout_height="@dimen/_30sdp"
+                        android:layout_marginStart="@dimen/_12sdp"
+                        android:fontFamily="@font/montserrat_regular"
+                        android:paddingStart="@dimen/_12sdp"
                         android:paddingEnd="@dimen/_8sdp"
                         android:text="goa"
-                        android:textColor="@color/darkpurple"
-                        app:cornerRadius="@dimen/_20sdp"
-                        app:rippleColor="@color/purple" />
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_9ssp"
+                        app:backgroundTint="@color/lightgrey"
+                        app:cornerRadius="@dimen/_20sdp" />
 
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/kerela"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="@dimen/_8sdp"
-                        android:backgroundTint="@color/lightpurple"
+                        android:layout_height="@dimen/_30sdp"
+                        android:layout_marginStart="@dimen/_12sdp"
+                        android:layout_marginEnd="@dimen/_12sdp"
+                        android:fontFamily="@font/montserrat_regular"
                         android:paddingStart="@dimen/_8sdp"
                         android:paddingEnd="@dimen/_8sdp"
                         android:text="kerela"
-                        android:textColor="@color/darkpurple"
-                        app:cornerRadius="@dimen/_20sdp"
-                        app:rippleColor="@color/purple" />
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_9ssp"
+                        app:backgroundTint="@color/lightgrey"
+                        app:cornerRadius="@dimen/_20sdp" />
 
 
                 </LinearLayout>
@@ -191,8 +196,9 @@
                 android:id="@+id/topplacestxt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_10sdp"
-                android:layout_marginTop="@dimen/_24sdp"
+                android:layout_marginStart="@dimen/_9sdp"
+                android:layout_marginTop="@dimen/_25sdp"
+                android:fontFamily="@font/montserrat_semibold"
                 android:text="Top Places"
                 android:textColor="@color/black"
                 android:textSize="@dimen/_16ssp"
@@ -209,6 +215,7 @@
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 app:layout_constraintTop_toBottomOf="@id/topplacestxt"
                 tools:listitem="@layout/home_page_recycleritem" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

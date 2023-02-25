@@ -31,6 +31,7 @@ class SignupDetails : AppCompatActivity() {
             auth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this) { task ->
 
+
                     if (task.isSuccessful) {
 
                         auth.signInWithEmailAndPassword(email, password)
