@@ -3,25 +3,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="fragments.BookFragment"
-    android:background="@color/white">
+    android:background="@color/whitebg"
+    tools:context="fragments.BookFragment">
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/searchCity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="12dp"
-        android:background="@drawable/comproundbggrey"
-        android:hint="Search city"
-        android:padding="16dp"
+        android:layout_marginStart="@dimen/_4sdp"
+        android:layout_marginTop="@dimen/_6sdp"
+        android:layout_marginEnd="@dimen/_4sdp"
+        android:layout_marginBottom="@dimen/_7sdp"
+        android:background="@drawable/completelyround"
+        android:fontFamily="@font/montserrat_regular"
+        android:hint="Search city..."
+        android:padding="@dimen/_11sdp"
         android:textColor="@color/black"
+        android:textColorHighlight="@color/darkpurple"
         android:textColorHint="@color/grey"
-        android:textSize="18sp"
+        android:textSize="@dimen/_11ssp"
         app:layout_constraintBottom_toTopOf="@id/recycler"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:maxLines="1"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/searchbtn"
@@ -34,6 +38,13 @@
         app:layout_constraintEnd_toEndOf="@id/searchCity"
         app:layout_constraintTop_toTopOf="@id/searchCity" />
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/_6sdp"
+        android:background="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/searchCity" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler"
         android:layout_width="0dp"
@@ -44,7 +55,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/searchCity"
-        tools:listitem="@layout/recycleritem" />
+        tools:listitem="@layout/hotellist_recycleritem" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

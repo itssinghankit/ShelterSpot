@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="@dimen/_4sdp"
+        android:layout_marginEnd="@dimen/_4sdp"
+        android:layout_marginBottom="@dimen/_5sdp"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/imageContainer"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_158sdp"
+                android:layout_marginStart="@dimen/_2sdp"
+                android:layout_marginEnd="@dimen/_2sdp"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="@dimen/_4sdp"
+                app:cardUseCompatPadding="true"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/image"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/hotelimg3" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:id="@+id/hotelName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:ellipsize="end"
+                android:fontFamily="@font/montserrat_semibold"
+                android:maxLines="1"
+                android:text="Maharaja Taj Hotel"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imageContainer" />
+
+            <TextView
+                android:id="@+id/city"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:drawableStart="@drawable/ic_baseline_location_on_24"
+                android:ellipsize="end"
+                android:fontFamily="@font/montserrat_regular"
+                android:maxLines="1"
+                android:text="city,"
+                android:textColor="@color/grey"
+                android:textSize="@dimen/_11ssp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/hotelName" />
+
+            <TextView
+                android:id="@+id/state"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_2sdp"
+                android:ellipsize="end"
+                android:fontFamily="@font/montserrat_regular"
+                android:maxLines="1"
+                android:text="State"
+                android:textColor="@color/grey"
+                android:textSize="@dimen/_11ssp"
+                app:layout_constraintStart_toEndOf="@id/city"
+                app:layout_constraintTop_toBottomOf="@id/hotelName" />
+
+            <TextView
+                android:id="@+id/price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_2sdp"
+                android:drawableLeft="@drawable/rupee"
+                android:ellipsize="end"
+                android:fontFamily="@font/montserrat_semibold"
+                android:maxLines="1"
+                android:text="300"
+                android:textColor="@color/darkpurple"
+                android:textSize="@dimen/_19ssp"
+                app:layout_constraintEnd_toStartOf="@id/Pricetxt"
+                app:layout_constraintTop_toBottomOf="@id/hotelName" />
+
+            <TextView
+                android:id="@+id/Pricetxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:ellipsize="end"
+                android:fontFamily="@font/montserrat_regular"
+                android:maxLines="1"
+                android:paddingBottom="@dimen/_12sdp"
+                android:text="/per day"
+                android:textColor="@color/darkpurple"
+                android:textSize="@dimen/_11ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/hotelName" />
+
+            <RatingBar
+                android:id="@+id/ratingBar"
+                style="?android:ratingBarStyleSmall"
+                android:layout_width="@dimen/_58sdp"
+                android:layout_height="@dimen/_16sdp"
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:numStars="5"
+                android:rating="3"
+                android:isIndicator="true"
+                android:stepSize="0.5"
+                android:progressTint="#FFC107"
+                android:progressBackgroundTint="@color/grey"
+                app:layout_constraintBottom_toTopOf="@id/price"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imageContainer" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

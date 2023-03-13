@@ -2,7 +2,6 @@ package com.example.shelterspot
 
 import android.content.Context
 import android.view.LayoutInflater
-import android.view.OnReceiveContentListener
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
@@ -22,7 +21,7 @@ class RecAdapter(val dataList:ArrayList<HotelDetDataClass>,val listener: onHotel
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): myViewHolder {
-        val view=LayoutInflater.from(parent.context).inflate(R.layout.recycleritem,parent,false)
+        val view=LayoutInflater.from(parent.context).inflate(R.layout.hotellist_recycleritem,parent,false)
         context=parent.context
         val myVH=myViewHolder(view)
         view.setOnClickListener{

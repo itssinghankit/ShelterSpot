@@ -27,8 +27,7 @@
         app:itemTextColor="@drawable/bottom_nav_color"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/menu"
-        />
+        app:menu="@menu/menu" />
 
     <View
         android:layout_width="match_parent"
