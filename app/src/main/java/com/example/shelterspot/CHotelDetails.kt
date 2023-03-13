@@ -26,6 +26,11 @@ class CHotelDetails : AppCompatActivity() {
             binding.city.text=it.child("city").value.toString()+","
             binding.description.text=it.child("description").value.toString()
             binding.price.text=it.child("price").value.toString()
+            binding.email.text=it.child("email").value.toString()
+            binding.mobile.text=it.child("mobile").value.toString()
+            binding.rooms.text=it.child("rooms").value.toString()
+            binding.personperroom.text=it.child("personperroom").value.toString()
+            binding.address.text="${it.child("area").value.toString()}, ${it.child("city").value.toString()}, ${it.child("state").value.toString()}, India - ${it.child("pincode").value.toString()}"
             Glide.with(this).load(it.child("url").value.toString()).centerCrop().placeholder(R.drawable.hotelplaceholder).into(binding.image)
 
         }

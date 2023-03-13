@@ -29,10 +29,10 @@
 
     <ImageView
         android:id="@+id/searchbtn"
-        android:layout_width="55dp"
+        android:layout_width="@dimen/_42sdp"
         android:layout_height="0dp"
-        android:paddingStart="12dp"
-        android:paddingEnd="12dp"
+        android:paddingStart="@dimen/_9sdp"
+        android:paddingEnd="@dimen/_9sdp"
         android:src="@drawable/ic_baseline_search_24"
         app:layout_constraintBottom_toBottomOf="@id/searchCity"
         app:layout_constraintEnd_toEndOf="@id/searchCity"
@@ -50,7 +50,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@color/whitebg"
-        android:paddingTop="8dp"
+        android:layout_marginTop="@dimen/_6sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

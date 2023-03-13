@@ -118,8 +118,9 @@
             <RatingBar
                 android:id="@+id/ratingBar"
                 style="?android:ratingBarStyleSmall"
-                android:layout_width="@dimen/_58sdp"
+                android:layout_width="@dimen/_63sdp"
                 android:layout_height="@dimen/_16sdp"
+                android:padding="@dimen/_2sdp"
                 android:layout_marginEnd="@dimen/_12sdp"
                 android:numStars="5"
                 android:rating="3"

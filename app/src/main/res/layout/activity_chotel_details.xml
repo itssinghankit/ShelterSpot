@@ -38,11 +38,13 @@
                 android:id="@+id/hotelName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="50dp"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_19sdp"
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:fontFamily="@font/montserrat_semibold"
                 android:text="Hotel Name"
                 android:textColor="@color/black"
-                android:textSize="30sp"
+                android:textSize="@dimen/_19ssp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/image" />
 
@@ -50,13 +52,14 @@
                 android:id="@id/city"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginStart="@dimen/_11sdp"
+                android:layout_marginTop="@dimen/_6sdp"
                 android:drawableLeft="@drawable/ic_baseline_location_on_24"
                 android:drawablePadding="10dp"
+                android:fontFamily="@font/montserrat_regular"
                 android:text="City,"
                 android:textColor="@color/grey"
-                android:textSize="20sp"
+                android:textSize="@dimen/_14ssp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/hotelName" />
 
@@ -64,52 +67,314 @@
                 android:id="@id/state"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="3dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginStart="@dimen/_2sdp"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:fontFamily="@font/montserrat_regular"
                 android:text="State"
                 android:textColor="@color/grey"
-                android:textSize="20sp"
+                android:textSize="@dimen/_14ssp"
                 app:layout_constraintStart_toEndOf="@id/city"
                 app:layout_constraintTop_toBottomOf="@id/hotelName" />
+
+            <TextView
+                android:id="@+id/ratingText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_19sdp"
+                android:fontFamily="@font/montserrat_regular"
+                android:text="Ratings - "
+                android:textColor="@color/grey"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/city" />
+
+            <RatingBar
+                android:id="@+id/ratingBar"
+                style="?android:ratingBarStyleSmall"
+                android:layout_width="@dimen/_63sdp"
+                android:layout_height="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_18sdp"
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:isIndicator="true"
+                android:numStars="5"
+                android:padding="@dimen/_2sdp"
+                android:progressBackgroundTint="@color/grey"
+                android:progressTint="@color/golden_yellow"
+                android:rating="3"
+                android:stepSize="0.5"
+                app:layout_constraintStart_toEndOf="@id/ratingText"
+                app:layout_constraintTop_toBottomOf="@id/city" />
+
+
+            <View
+                android:id="@+id/view0"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/_19sdp"
+                android:background="@color/whitebg"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginEnd="@dimen/_12sdp"
+                app:layout_constraintTop_toBottomOf="@id/ratingText" />
 
             <TextView
                 android:id="@+id/description"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginEnd="20dp"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_19sdp"
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:ellipsize="end"
+                android:fontFamily="@font/montserrat_regular"
+                android:maxLines="10"
                 android:text="sssssssss sssss sssss sssssssssss ssssss ssoremsssssssssss ssssss ssssss sssss ssssss ssssssss s ssssss s ssssssss s sssssss"
-                android:textColor="@color/black"
-                android:textSize="18sp"
-                app:layout_constraintTop_toBottomOf="@id/state" />
-
-            <TextView
-                android:id="@id/price"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="20dp"
-                android:drawableLeft="@drawable/rupee"
-                android:drawablePadding="6dp"
-                android:text="350"
-                android:textColor="@color/darkpurple"
-                android:textSize="30sp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/description" />
-
-            <TextView
-                android:id="@+id/perdattxt"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="6dp"
-                android:layout_marginTop="29dp"
-                android:text="/day"
                 android:textColor="@color/grey"
-                android:textSize="20sp"
-                app:layout_constraintStart_toEndOf="@id/price"
+                android:textSize="@dimen/_9ssp"
+                app:layout_constraintTop_toBottomOf="@id/view0" />
+
+            <View
+                android:id="@+id/view1"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_6sdp"
+                android:layout_marginTop="@dimen/_19sdp"
+                android:background="@color/whitebg"
                 app:layout_constraintTop_toBottomOf="@id/description" />
+
+            <TextView
+                android:id="@+id/otherdettxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_19sdp"
+                android:fontFamily="@font/montserrat_semibold"
+                android:text="Other Details"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_14ssp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/view1" />
+
+            <TextView
+                android:id="@+id/addresstxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_14sdp"
+                android:fontFamily="@font/montserrat_semibold"
+                android:text="Address - "
+                android:textColor="@color/grey"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/otherdettxt" />
+
+            <TextView
+                android:id="@+id/address"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_14sdp"
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:fontFamily="@font/montserrat_regular"
+                android:gravity="start"
+                android:text="kullu manali, mumbai, maharashtra, inida - 202040"
+                android:textColor="@color/grey"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/addresstxt"
+                app:layout_constraintTop_toBottomOf="@id/otherdettxt" />
+
+            <TextView
+                android:id="@+id/roomstxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:fontFamily="@font/montserrat_semibold"
+                android:text="Rooms - "
+                android:textColor="@color/grey"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/address" />
+
+            <TextView
+                android:id="@+id/rooms"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:fontFamily="@font/montserrat_regular"
+                android:gravity="start"
+                android:text="200"
+                android:textColor="@color/grey"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/address"
+                app:layout_constraintTop_toBottomOf="@id/address" />
+
+            <TextView
+                android:id="@+id/personroomtxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:fontFamily="@font/montserrat_semibold"
+                android:text="Person per room - "
+                android:textColor="@color/grey"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rooms" />
+
+            <TextView
+                android:id="@+id/personperroom"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:fontFamily="@font/montserrat_regular"
+                android:gravity="start"
+                android:text="2"
+                android:textColor="@color/grey"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/personroomtxt"
+                app:layout_constraintTop_toBottomOf="@id/rooms" />
+
+            <View
+                android:id="@+id/view2"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_6sdp"
+                android:layout_marginTop="@dimen/_19sdp"
+                android:background="@color/whitebg"
+                app:layout_constraintTop_toBottomOf="@id/personperroom" />
+
+            <TextView
+                android:id="@+id/contacttxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_19sdp"
+                android:fontFamily="@font/montserrat_semibold"
+                android:text="Contact us"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_14ssp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/view2" />
+
+            <TextView
+                android:id="@+id/mobiletxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_14sdp"
+                android:fontFamily="@font/montserrat_semibold"
+                android:text="Mobile no - "
+                android:textColor="@color/grey"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/contacttxt" />
+
+            <TextView
+                android:id="@+id/mobile"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_14sdp"
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:fontFamily="@font/montserrat_regular"
+                android:gravity="start"
+                android:text="9988776655"
+                android:textColor="@color/grey"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/mobiletxt"
+                app:layout_constraintTop_toBottomOf="@id/contacttxt" />
+
+            <TextView
+                android:id="@+id/emailtxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:fontFamily="@font/montserrat_semibold"
+                android:text="Email - "
+                android:textColor="@color/grey"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/mobile" />
+
+            <TextView
+                android:id="@+id/email"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:layout_marginBottom="@dimen/_70sdp"
+                android:fontFamily="@font/montserrat_regular"
+                android:gravity="start"
+                android:text="abc@xyz.com"
+                android:textColor="@color/grey"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/emailtxt"
+                app:layout_constraintTop_toBottomOf="@id/mobile" />
+
+
         </androidx.constraintlayout.widget.ConstraintLayout>
+
     </ScrollView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_49sdp"
+        android:background="@drawable/toptwocorner_round_green"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@id/price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:drawableLeft="@drawable/rupee"
+            android:drawablePadding="6dp"
+            android:fontFamily="@font/montserrat_semibold"
+            android:text="350"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_19ssp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_12sdp"
+            android:fontFamily="@font/montserrat_semibold"
+            android:text="BOOK"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_12ssp"
+            app:cornerRadius="5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:rippleColor="#347A37"
+            app:strokeColor="@color/white"
+            app:strokeWidth="2dp" />
+
+        <TextView
+            android:id="@+id/perdattxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:layout_marginBottom="@dimen/_2sdp"
+            android:fontFamily="@font/montserrat_regular"
+            android:text="/day"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintBottom_toBottomOf="@id/price"
+            app:layout_constraintStart_toEndOf="@id/price" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

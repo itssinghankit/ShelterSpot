@@ -70,6 +70,7 @@ class HotelHome : AppCompatActivity() {
             binding.pincode.setText(it.child("pincode").value.toString())
             binding.area.setText(it.child("area").value.toString())
             binding.room.setText(it.child("rooms").value.toString())
+            binding.personperroom.setText(it.child("personperroom").value.toString())
             Glide.with(this).load(it.child("url").value.toString()).centerCrop().into(binding.image)
         }
 

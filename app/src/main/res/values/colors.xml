@@ -17,4 +17,5 @@
     <color name="black">#0f0f0f</color>
     <color name="linkblue">#065fd4</color>
     <color name="txtblackbg">#f2f2f2</color>
+    <color name="golden_yellow">#FFC107</color>
 </resources>

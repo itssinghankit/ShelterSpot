@@ -235,6 +235,28 @@
                 android:textSize="17sp"
                 android:layout_marginTop="8dp"
                 android:textColor="@color/black"/>
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/personperroomtxt"
+                android:text="Person per room :"
+                app:layout_constraintTop_toBottomOf="@id/roomtxt"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textSize="17sp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/black"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/personperroom"
+                android:text="420"
+                app:layout_constraintTop_toBottomOf="@id/roomtxt"
+                app:layout_constraintStart_toEndOf="@id/roomtxt"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:textSize="17sp"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/black"/>
             <com.google.android.material.button.MaterialButton
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -249,7 +271,7 @@
                 android:textSize="18sp"
                 android:padding="15dp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/roomtxt"
+                app:layout_constraintTop_toBottomOf="@id/personperroomtxt"
                 android:gravity="center"
                 android:backgroundTint="@color/darkpurple"
                 android:textColor="@color/white" />
