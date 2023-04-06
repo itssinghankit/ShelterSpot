@@ -25,4 +25,9 @@
         android:name="fragments.BookFragment"
         android:label="fragment_book"
         tools:layout="@layout/fragment_book" />
+    <fragment
+        android:id="@+id/mapsFragment"
+        android:name="fragments.MapsFragment"
+        android:label="fragment_maps"
+        tools:layout="@layout/fragment_maps" />
 </navigation>

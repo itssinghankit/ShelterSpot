@@ -111,10 +111,10 @@
                 android:id="@+id/view0"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginTop="@dimen/_19sdp"
-                android:background="@color/whitebg"
                 android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_19sdp"
                 android:layout_marginEnd="@dimen/_12sdp"
+                android:background="@color/whitebg"
                 app:layout_constraintTop_toBottomOf="@id/ratingText" />
 
             <TextView
@@ -316,6 +316,48 @@
                 app:layout_constraintStart_toEndOf="@id/emailtxt"
                 app:layout_constraintTop_toBottomOf="@id/mobile" />
 
+            <View
+                android:id="@+id/view3"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_6sdp"
+                android:layout_marginTop="@dimen/_19sdp"
+                android:background="@color/whitebg"
+                app:layout_constraintTop_toBottomOf="@id/emailtxt" />
+
+            <TextView
+                android:id="@+id/maptxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_19sdp"
+                android:fontFamily="@font/montserrat_semibold"
+                android:text="Map View"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_14ssp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/view3" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_250sdp"
+                android:layout_marginLeft="@dimen/_4sdp"
+                android:layout_marginTop="@dimen/_11sdp"
+                android:layout_marginRight="@dimen/_4sdp"
+                android:layout_marginBottom="@dimen/_100sdp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="8dp"
+                app:cardUseCompatPadding="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/maptxt">
+
+                <androidx.fragment.app.FragmentContainerView
+                    android:id="@+id/map"
+                    android:name="fragments.MapsFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_250sdp"
+                    tools:layout="@layout/fragment_account" />
+            </androidx.cardview.widget.CardView>
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -346,6 +388,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/book"
             style="@style/Widget.Material3.Button.OutlinedButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -369,7 +412,7 @@
             android:layout_marginStart="@dimen/_4sdp"
             android:layout_marginBottom="@dimen/_2sdp"
             android:fontFamily="@font/montserrat_regular"
-            android:text="/day"
+            android:text="/day + gst"
             android:textColor="@color/white"
             android:textSize="@dimen/_12ssp"
             app:layout_constraintBottom_toBottomOf="@id/price"

@@ -13,7 +13,7 @@
         android:icon="@drawable/ic_baseline_notifications_24"
         android:title="History" />
     <item
-        android:id="@+id/accountFragment"
+        android:id="@+id/mapsFragment"
         android:icon="@drawable/person"
         android:title="Account" />
 
