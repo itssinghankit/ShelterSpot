@@ -7,11 +7,6 @@
     android:layout_height="match_parent"
     tools:context=".HotelBookingDetails">
 
-  <androidx.fragment.app.FragmentContainerView
-      android:layout_width="match_parent"
-      android:layout_height="match_parent"
-      android:id="@+id/map"
-      android:name="fragments.MapsFragment"
-      />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

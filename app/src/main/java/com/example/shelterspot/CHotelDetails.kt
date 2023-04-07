@@ -19,6 +19,8 @@ class CHotelDetails : AppCompatActivity() {
         setContentView(binding.root)
         val userId=intent.getStringExtra("userId").toString()
 
+        var latitude=0.0
+        var longitude=0.0
 
         database=FirebaseDatabase.getInstance().getReference("hotels")
         database.child(userId).get().addOnSuccessListener {
@@ -30,6 +32,8 @@ class CHotelDetails : AppCompatActivity() {
             binding.email.text=it.child("email").value.toString()
             binding.mobile.text=it.child("mobile").value.toString()
             binding.rooms.text=it.child("rooms").value.toString()
+            latitude=it.child("latitude").value.toString().toDouble()
+            longitude=it.child("longitude").value.toString().toDouble()
             binding.personperroom.text=it.child("personperroom").value.toString()
             binding.address.text="${it.child("area").value.toString()}, ${it.child("city").value.toString()}, ${it.child("state").value.toString()}, India - ${it.child("pincode").value.toString()}"
             Glide.with(this).load(it.child("url").value.toString()).centerCrop().placeholder(R.drawable.hotelplaceholder).into(binding.image)
@@ -40,6 +44,13 @@ class CHotelDetails : AppCompatActivity() {
             startActivity(intent)
         }
 
+        //after clicking on the map
+        binding.map.setOnClickListener{
+            val intent=Intent(this,CMapView::class.java)
+            intent.putExtra("latitude",latitude)
+            intent.putExtra("longitude",longitude)
+            startActivity(intent)
+        }
         //after book button is clicked
         binding.book.setOnClickListener{
             val intent=Intent(this,HotelBookingDetails::class.java)

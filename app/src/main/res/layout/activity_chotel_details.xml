@@ -311,7 +311,6 @@
                 android:text="abc@xyz.com"
                 android:textColor="@color/grey"
                 android:textSize="@dimen/_12ssp"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/emailtxt"
                 app:layout_constraintTop_toBottomOf="@id/mobile" />
@@ -350,12 +349,12 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/maptxt">
 
-                <androidx.fragment.app.FragmentContainerView
-                    android:id="@+id/map"
-                    android:name="fragments.MapsFragment"
+                <ImageView
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/_250sdp"
-                    tools:layout="@layout/fragment_account" />
+                    android:layout_height="match_parent"
+                    android:src="@drawable/mapplaceholder"
+                    android:id="@+id/map"
+                    android:scaleType="centerCrop"/>
             </androidx.cardview.widget.CardView>
 
 

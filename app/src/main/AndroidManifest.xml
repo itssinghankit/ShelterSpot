@@ -30,97 +30,60 @@
         -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="@string/Google_Map_API" />
+            android:value="YOUR_API_KEY" />
 
-
+        <activity
+            android:name=".CMapView"
+            android:exported="false"
+            android:label="@string/title_activity_cmap_view" />
+        <activity
+            android:name=".HotelMapLocSetActivity"
+            android:exported="false"
+            android:label="@string/title_activity_hotel_map_loc_set" />
         <activity
             android:name=".HotelBookingDetails"
             android:exported="false" />
         <activity
             android:name=".CHome"
+            android:exported="false" />
+        <activity
+            android:name=".CHotelDetails"
+            android:exported="false" />
+        <activity
+            android:name=".EditHotelDetails"
+            android:exported="false" />
+        <activity
+            android:name=".HotelHome"
+            android:exported="false" />
+        <activity
+            android:name=".HotelSignin"
+            android:exported="false" />
+        <activity
+            android:name=".HotelSigninSignup"
+            android:exported="false" />
+        <activity
+            android:name=".HotelSignup"
+            android:exported="false" />
+        <activity
+            android:name=".HotelHomeDetUpload"
+            android:exported="false"></activity>
+        <activity
+            android:name=".SignupDetails"
+            android:exported="false" />
+        <activity
+            android:name=".Signup"
+            android:exported="false" />
+        <activity
+            android:name=".Signin"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity
-            android:name=".CHotelDetails"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".EditHotelDetails"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".HotelHome"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".HotelSignin"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".HotelSigninSignup"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".HotelSignup"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".HotelHomeDetUpload"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".SignupDetails"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".Signup"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".Signin"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".MainActivity"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
         </activity>
     </application>
 

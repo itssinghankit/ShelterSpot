@@ -3,6 +3,7 @@ package com.example.shelterspot
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
@@ -31,6 +32,15 @@ class HotelHomeDetUpload : AppCompatActivity() {
         val password = intent.getStringExtra("password").toString()
         email = intent.getStringExtra("email").toString()
 
+        Log.d("meow",email)
+        //for selecting map location of hotel
+        binding.map.setOnClickListener{
+          val intent=Intent(this, HotelMapLocSetActivity::class.java)
+            intent.putExtra("email",email)
+            intent.putExtra("password",password)
+            startActivity(intent)
+        }
+
         //for selecting image
         binding.selectImage.setOnClickListener {
             resultLauncher.launch("image/*")
@@ -38,6 +48,12 @@ class HotelHomeDetUpload : AppCompatActivity() {
 
         database = FirebaseDatabase.getInstance().getReference("hotels")
         auth = FirebaseAuth.getInstance()
+
+        //after map location is set, setting its details to edittexts
+        binding.city.setText(intent.getStringExtra("city").toString())
+        binding.area.setText(intent.getStringExtra("area").toString())
+        binding.state.setText(intent.getStringExtra("state").toString())
+        binding.pincode.setText(intent.getStringExtra("pincode").toString())
 
         binding.signup.setOnClickListener {
 
@@ -113,7 +129,9 @@ class HotelHomeDetUpload : AppCompatActivity() {
                             binding.description.text.toString(),
                             uriUrl.toString(),
                             userId,
-                            binding.personperroom.text.toString()
+                            binding.personperroom.text.toString(),
+                            intent.getStringExtra("latitude").toString(),
+                            intent.getStringExtra("longitude").toString()
                         )
                         database.child(userId).setValue(datobj).addOnCompleteListener {
                             if (it.isSuccessful) {

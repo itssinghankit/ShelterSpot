@@ -2,5 +2,7 @@
     <string name="app_name">ShelterSpot</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="Google_Map_API">AIzaSyBB8LxwJde6EClT8uT6nuitM3LJ3z3id70</string>
+    <string name="Google_Map_API">AIzaSyB1CSlsrNkbRrF_8FJCmMaX-BhTd-KibXg</string>
+    <string name="title_activity_hotel_map_loc_set">HotelMapLocSetActivity</string>
+    <string name="title_activity_cmap_view">CMapView</string>
 </resources>
