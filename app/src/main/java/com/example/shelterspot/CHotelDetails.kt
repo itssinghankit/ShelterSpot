@@ -54,6 +54,7 @@ class CHotelDetails : AppCompatActivity() {
         //after book button is clicked
         binding.book.setOnClickListener{
             val intent=Intent(this,HotelBookingDetails::class.java)
+            intent.putExtra("userId",userId)
             startActivity(intent)
         }
 
