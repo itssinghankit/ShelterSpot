@@ -3,7 +3,6 @@ package com.example.shelterspot
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
@@ -32,7 +31,6 @@ class HotelHomeDetUpload : AppCompatActivity() {
         val password = intent.getStringExtra("password").toString()
         email = intent.getStringExtra("email").toString()
 
-        Log.d("meow",email)
         //for selecting map location of hotel
         binding.map.setOnClickListener{
           val intent=Intent(this, HotelMapLocSetActivity::class.java)
@@ -60,16 +58,6 @@ class HotelHomeDetUpload : AppCompatActivity() {
             binding.signup.visibility = View.INVISIBLE
             binding.progressBar.visibility = View.VISIBLE
 
-            //for uoloading details
-
-
-            //for saving hotel details
-//            val datobj=HotelDetDataClass(binding.ownerName.text.toString(),binding.hotelName.text.toString(),binding.state.text.toString(),binding.city.text.toString(),binding.area.text.toString(),binding.pincode.text.toString(),binding.mobile.text.toString(),email, binding.price.text.toString(),binding.rooms.text.toString(),binding.description.text.toString())
-//            database.child(userId).setValue(datobj).addOnCompleteListener {
-//                if(it.isSuccessful){
-//
-//                    uploadDetails()
-
             //then finally after uploading details,finally signup of hotels
             auth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this) { task ->
@@ -83,14 +71,7 @@ class HotelHomeDetUpload : AppCompatActivity() {
                         Toast.makeText(this, "Failed, Try again", Toast.LENGTH_SHORT).show()
                     }
                 }
-//                }else{
-//                    Toast.makeText(this, "failed,try again", Toast.LENGTH_SHORT).show()
-//                    binding.signup.visibility=View.VISIBLE
-//                    binding.progressBar.visibility=View.INVISIBLE
-//                }
-//            }
         }
-
 
     }
 

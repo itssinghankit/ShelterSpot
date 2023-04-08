@@ -2,17 +2,15 @@ package fragments
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.shelterspot.*
 import com.example.shelterspot.Adapters.HomeFragLocAdapter
 import com.example.shelterspot.Adapters.onHotelClicked
-import com.example.shelterspot.R
+import com.example.shelterspot.CHotelDetails
+import com.example.shelterspot.HotelDetDataClass
 import com.example.shelterspot.databinding.FragmentHomeBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
@@ -67,7 +65,6 @@ class HomeFragment : Fragment(), onHotelClicked {
                         val singledata = datasnapshot.getValue(HotelDetDataClass::class.java)
                         arraylist.add(singledata!!)
                     }
-                    Log.d("hi", arraylist.toString())
                     binding.recyclerView.adapter =
                         HomeFragLocAdapter(arraylist, context!!, this@HomeFragment)
                 }

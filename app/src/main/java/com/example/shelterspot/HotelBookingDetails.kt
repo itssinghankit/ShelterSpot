@@ -2,15 +2,21 @@ package com.example.shelterspot
 
 import android.app.Activity
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
+import com.example.shelterspot.DataClasses.HistoryItemDataclass
 import com.example.shelterspot.databinding.ActivityHotelBookingDetailsBinding
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.razorpay.Checkout
 import com.razorpay.PaymentResultListener
 import org.json.JSONObject
+import java.text.SimpleDateFormat
+import java.util.*
 import kotlin.math.roundToInt
 
 class HotelBookingDetails : AppCompatActivity(), PaymentResultListener {
@@ -19,6 +25,9 @@ class HotelBookingDetails : AppCompatActivity(), PaymentResultListener {
     private lateinit var database: DatabaseReference
     private lateinit var email: String
     private lateinit var mobile: String
+    private lateinit var rooms:String
+    private lateinit var userId:String
+    private lateinit var hotelname:String
 
     companion object {
         private var total: Double = 0.0
@@ -29,7 +38,7 @@ class HotelBookingDetails : AppCompatActivity(), PaymentResultListener {
         binding = ActivityHotelBookingDetailsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val userId = intent.getStringExtra("userId").toString()
+        userId = intent.getStringExtra("userId").toString()
         database = FirebaseDatabase.getInstance().getReference("hotels")
         database.child(userId).get().addOnSuccessListener {
 
@@ -37,6 +46,8 @@ class HotelBookingDetails : AppCompatActivity(), PaymentResultListener {
             total = setPrices(it.child("price").value.toString())
             email = it.child("email").value.toString()
             mobile = it.child("mobile").value.toString()
+            rooms=it.child("rooms").value.toString()
+            hotelname=it.child("hotelname").value.toString()
         }
 
         //back button
@@ -94,8 +105,37 @@ class HotelBookingDetails : AppCompatActivity(), PaymentResultListener {
         }
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onPaymentSuccess(p0: String?) {
         Toast.makeText(this, "Payment Successfull", Toast.LENGTH_SHORT).show()
+        val a:Int
+
+        //updating rooms number which is now one less than original in hotels database
+        val roomMap=HashMap<String,String>()
+        roomMap["rooms"]=(rooms.toInt()-1).toString()
+        database.child(userId).updateChildren(roomMap as Map<String, Any>)
+
+        //saving history
+
+        historyDataUpload()
+
+        val intent=Intent(this,CHome::class.java)
+        startActivity(intent)
+        finish()
+
+    }
+
+
+    private fun historyDataUpload() {
+        //for current date and time
+        val currentdatetime= Date()
+        val dateformat= SimpleDateFormat("dd-MM-yyyy HH:mm a")
+        val datetime=dateformat.format(currentdatetime)
+
+        //now uploading in the database
+        database=FirebaseDatabase.getInstance().getReference("custHist")
+        database.child(FirebaseAuth.getInstance().currentUser!!.uid).setValue(HistoryItemDataclass(hotelname, total.toString(),datetime))
+
     }
 
     override fun onPaymentError(p0: Int, p1: String?) {
