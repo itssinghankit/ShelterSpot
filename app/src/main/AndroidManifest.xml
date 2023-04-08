@@ -30,7 +30,7 @@
         -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="YOUR_API_KEY" />
+            android:value="@string/Google_Map_API" />
 
         <activity
             android:name=".CMapView"
@@ -45,7 +45,7 @@
             android:exported="false" />
         <activity
             android:name=".CHome"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

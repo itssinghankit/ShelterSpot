@@ -36,6 +36,7 @@ android {
     buildFeatures{
         viewBinding = true
     }
+
 }
 
 dependencies {
@@ -65,5 +66,8 @@ dependencies {
     //google maps
     implementation 'com.google.android.gms:play-services-maps:18.0.2'
     implementation 'com.google.android.gms:play-services-location:21.0.1'
+
+    //razorpay
+    implementation 'com.razorpay:checkout:1.6.26'
 
 }
