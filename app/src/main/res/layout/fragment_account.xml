@@ -1,13 +1,115 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context="fragments.AccountFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="account" />
+    <androidx.cardview.widget.CardView
+        android:id="@+id/imgcontianer"
+        android:layout_width="@dimen/_60sdp"
+        android:layout_height="@dimen/_60sdp"
+        android:layout_marginTop="@dimen/_37sdp"
+        app:cardCornerRadius="@dimen/_30sdp"
+        app:cardElevation="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-</FrameLayout>
+        <ImageView
+            android:id="@+id/personimage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/hotelimg3" />
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/personname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:ellipsize="end"
+        android:fontFamily="@font/montserrat_semibold"
+        android:maxLines="2"
+        android:text="Deepanshu kesarwani"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_14sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imgcontianer" />
+
+    <View
+        android:id="@+id/view0"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="@dimen/_19sdp"
+        android:background="@color/linecolor"
+        app:layout_constraintTop_toBottomOf="@id/personname" />
+
+    <TextView
+        android:id="@+id/showdetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/person"
+        android:drawablePadding="@dimen/_9sdp"
+        android:drawableTint="@color/grey"
+        android:fontFamily="@font/montserrat_semibold"
+        android:paddingStart="@dimen/_12sdp"
+        android:paddingTop="@dimen/_9sdp"
+        android:paddingBottom="@dimen/_9sdp"
+        android:text="Show Details"
+        android:textColor="@color/grey"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintTop_toBottomOf="@id/view0" />
+
+    <View
+        android:id="@+id/view1"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/linecolor"
+        app:layout_constraintTop_toBottomOf="@id/showdetails" />
+
+    <TextView
+        android:id="@+id/editdetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/ic_baseline_edit_24"
+        android:drawablePadding="@dimen/_9sdp"
+        android:drawableTint="@color/grey"
+        android:fontFamily="@font/montserrat_semibold"
+        android:paddingStart="@dimen/_12sdp"
+        android:paddingTop="@dimen/_9sdp"
+        android:paddingBottom="@dimen/_9sdp"
+        android:text="Edit Details"
+        android:textColor="@color/grey"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintTop_toBottomOf="@id/view1" />
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/linecolor"
+        app:layout_constraintTop_toBottomOf="@id/editdetails" />
+
+    <Button
+        android:id="@+id/signout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="@dimen/_12sdp"
+        android:layout_marginEnd="@dimen/_12sdp"
+        android:layout_marginBottom="@dimen/_12sdp"
+        android:backgroundTint="@color/purple"
+        android:fontFamily="@font/montserrat_semibold"
+        android:padding="@dimen/_6sdp"
+        android:text="Sign Out"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

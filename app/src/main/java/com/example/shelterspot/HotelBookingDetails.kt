@@ -125,7 +125,6 @@ class HotelBookingDetails : AppCompatActivity(), PaymentResultListener {
 
     }
 
-
     private fun historyDataUpload() {
         //for current date and time
         val currentdatetime= Date()
@@ -139,6 +138,6 @@ class HotelBookingDetails : AppCompatActivity(), PaymentResultListener {
     }
 
     override fun onPaymentError(p0: Int, p1: String?) {
-        Toast.makeText(this, "Payment failed lol", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, "Payment failed", Toast.LENGTH_SHORT).show()
     }
 }

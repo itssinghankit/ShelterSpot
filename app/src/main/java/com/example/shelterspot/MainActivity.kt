@@ -1,9 +1,8 @@
 package com.example.shelterspot
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.LayoutInflater
+import androidx.appcompat.app.AppCompatActivity
 import com.example.shelterspot.databinding.ActivityMainBinding
 import com.google.firebase.auth.FirebaseAuth
 
@@ -33,14 +32,14 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-//    public override fun onStart() {
-//        auth=FirebaseAuth.getInstance()
-//        super.onStart()
-//        val currentUser=auth.currentUser
-//        if(currentUser!=null){
-//            val intent=Intent(this,HotelHomeDetUpload::class.java)
-//            startActivity(intent)
-//            finish()
-//        }
-//    }
+    public override fun onStart() {
+        auth=FirebaseAuth.getInstance()
+        super.onStart()
+        val currentUser=auth.currentUser
+        if(currentUser!=null){
+            val intent=Intent(this,CHome::class.java)
+            startActivity(intent)
+            finish()
+        }
+    }
 }

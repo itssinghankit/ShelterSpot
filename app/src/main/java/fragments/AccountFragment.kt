@@ -1,15 +1,22 @@
 package fragments
 
+import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.shelterspot.R
+import androidx.fragment.app.Fragment
+import com.example.shelterspot.MainActivity
+import com.example.shelterspot.databinding.FragmentAccountBinding
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 
 
 class AccountFragment : Fragment() {
-
+    private lateinit var binding:FragmentAccountBinding
+    private lateinit var auth: FirebaseAuth
+    private lateinit var database:DatabaseReference
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -19,8 +26,23 @@ class AccountFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_account, container, false)
+        binding=FragmentAccountBinding.inflate(layoutInflater)
+        auth= FirebaseAuth.getInstance()
+        database=FirebaseDatabase.getInstance().getReference("customer")
+
+        val userId=auth.currentUser!!.uid
+
+        database.child(userId).get().addOnSuccessListener {
+            binding.personname.text=it.child("name").value.toString()
+        }
+
+        binding.signout.setOnClickListener{
+            auth.signOut()
+            val intent=Intent(context,MainActivity::class.java)
+            startActivity(intent)
+        }
+
+        return binding.root
     }
 
 }
