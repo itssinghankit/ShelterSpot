@@ -134,7 +134,7 @@ class HotelBookingDetails : AppCompatActivity(), PaymentResultListener {
 
         //now uploading in the database
         database=FirebaseDatabase.getInstance().getReference("custHist")
-        database.child(FirebaseAuth.getInstance().currentUser!!.uid).setValue(HistoryItemDataclass(hotelname, total.toString(),datetime))
+        database.child(FirebaseAuth.getInstance().currentUser!!.uid).child(System.currentTimeMillis().toString()).setValue(HistoryItemDataclass(hotelname, total.toString(),datetime))
 
     }
 

@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.shelterspot.Adapters.HistoryAdapter
 import com.example.shelterspot.DataClasses.HistoryItemDataclass
 import com.example.shelterspot.databinding.FragmentHistoryBinding
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 
 
@@ -29,9 +30,10 @@ class HistoryFragment : Fragment() {
         val arrayList = ArrayList<HistoryItemDataclass>()
 
                          //recieving customer history details
+        val userId=FirebaseAuth.getInstance().currentUser!!.uid
 
         database = FirebaseDatabase.getInstance().getReference("custHist")
-        database.addValueEventListener(object : ValueEventListener {
+        database.child(userId).addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 if (snapshot.exists()) {
                     for (datasnapshot in snapshot.children) {
