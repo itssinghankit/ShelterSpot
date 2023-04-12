@@ -16,7 +16,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ShelterSpot"
         tools:targetApi="31">
-
+        <activity
+            android:name=".AccountCustomerDetails"
+            android:exported="false" />
         <!--
              TODO: Before you run your application, you need a Google Maps API key.
 
@@ -45,8 +47,7 @@
             android:exported="false" />
         <activity
             android:name=".CHome"
-            android:exported="false">
-        </activity>
+            android:exported="false" />
         <activity
             android:name=".CHotelDetails"
             android:exported="false" />
@@ -67,7 +68,7 @@
             android:exported="false" />
         <activity
             android:name=".HotelHomeDetUpload"
-            android:exported="false"></activity>
+            android:exported="false" />
         <activity
             android:name=".SignupDetails"
             android:exported="false" />

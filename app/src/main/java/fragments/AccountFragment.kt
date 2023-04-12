@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.example.shelterspot.AccountCustomerDetails
 import com.example.shelterspot.MainActivity
 import com.example.shelterspot.databinding.FragmentAccountBinding
 import com.google.firebase.auth.FirebaseAuth
@@ -36,6 +37,13 @@ class AccountFragment : Fragment() {
             binding.personname.text=it.child("name").value.toString()
         }
 
+        //after show details is clicked
+        binding.showdetails.setOnClickListener{
+            val intent=Intent(context,AccountCustomerDetails::class.java)
+            startActivity(intent)
+        }
+
+        //after signout button is clicked
         binding.signout.setOnClickListener{
             auth.signOut()
             val intent=Intent(context,MainActivity::class.java)

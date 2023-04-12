@@ -36,25 +36,26 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_3sdp"
         android:fontFamily="@font/montserrat_regular"
-        android:textColor="@color/grey"
         android:text="Shelterspot"
+        android:textColor="@color/grey"
         app:layout_constraintStart_toStartOf="@id/paymentheadtxt"
         app:layout_constraintTop_toBottomOf="@id/paymentheadtxt" />
 
     <View
+        android:id="@+id/view0"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:id="@+id/view0"
         android:layout_marginTop="@dimen/_6sdp"
         android:background="@color/linecolor"
-        app:layout_constraintTop_toBottomOf="@id/sheltertxt"/>
+        app:layout_constraintTop_toBottomOf="@id/sheltertxt" />
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/view0"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/view0">
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -70,7 +71,8 @@
                 android:textColor="@color/black"
                 android:textSize="@dimen/_14ssp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
+                app:layout_constraintTop_toTopOf="parent" />
+
             <TextView
                 android:id="@+id/mrptxt"
                 android:layout_width="wrap_content"
@@ -82,19 +84,21 @@
                 android:textColor="@color/grey"
                 android:textSize="@dimen/_12ssp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/billtxt"/>
+                app:layout_constraintTop_toBottomOf="@id/billtxt" />
+
             <TextView
+                android:id="@+id/mrp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/mrp"
-                app:layout_constraintTop_toBottomOf="@id/billtxt"
+                android:layout_marginTop="@dimen/_14ssp"
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:fontFamily="@font/montserrat_regular"
                 android:text=""
                 android:textColor="@color/grey"
                 android:textSize="@dimen/_12ssp"
-                android:fontFamily="@font/montserrat_regular"
                 app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginTop="@dimen/_14ssp"
-                android:layout_marginEnd="@dimen/_12sdp"/>
+                app:layout_constraintTop_toBottomOf="@id/billtxt" />
+
             <TextView
                 android:id="@+id/platformtxt"
                 android:layout_width="wrap_content"
@@ -106,28 +110,31 @@
                 android:textColor="@color/grey"
                 android:textSize="@dimen/_12ssp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/mrptxt"/>
+                app:layout_constraintTop_toBottomOf="@id/mrptxt" />
+
             <TextView
+                android:id="@+id/platformprice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/platformprice"
-                app:layout_constraintTop_toBottomOf="@id/mrp"
+                android:layout_marginTop="@dimen/_6ssp"
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:fontFamily="@font/montserrat_regular"
                 android:text="0.0"
                 android:textColor="@color/grey"
                 android:textSize="@dimen/_12ssp"
-                android:fontFamily="@font/montserrat_regular"
                 app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginTop="@dimen/_6ssp"
-                android:layout_marginEnd="@dimen/_12sdp"/>
+                app:layout_constraintTop_toBottomOf="@id/mrp" />
+
             <View
+                android:id="@+id/view1"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:id="@+id/view1"
+                android:layout_marginStart="@dimen/_12sdp"
                 android:layout_marginTop="@dimen/_14sdp"
-                android:background="@color/linecolor"
-                app:layout_constraintTop_toBottomOf="@id/platformtxt"
                 android:layout_marginEnd="@dimen/_12sdp"
-                android:layout_marginStart="@dimen/_12sdp"/>
+                android:background="@color/linecolor"
+                app:layout_constraintTop_toBottomOf="@id/platformtxt" />
+
             <TextView
                 android:id="@+id/gsttxt"
                 android:layout_width="wrap_content"
@@ -139,28 +146,31 @@
                 android:textColor="@color/grey"
                 android:textSize="@dimen/_12ssp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/view1"/>
+                app:layout_constraintTop_toBottomOf="@id/view1" />
+
             <TextView
+                android:id="@+id/gst"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/gst"
-                app:layout_constraintTop_toBottomOf="@id/view1"
-                android:text=""
-                android:textSize="@dimen/_12ssp"
-                android:textColor="@color/grey"
-                android:fontFamily="@font/montserrat_regular"
-                app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginTop="@dimen/_14ssp"
-                android:layout_marginEnd="@dimen/_12sdp"/>
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:fontFamily="@font/montserrat_regular"
+                android:text=""
+                android:textColor="@color/grey"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/view1" />
+
             <View
+                android:id="@+id/view2"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:id="@+id/view2"
+                android:layout_marginStart="@dimen/_12sdp"
                 android:layout_marginTop="@dimen/_14sdp"
-                android:background="@color/linecolor"
-                app:layout_constraintTop_toBottomOf="@id/gsttxt"
                 android:layout_marginEnd="@dimen/_12sdp"
-                android:layout_marginStart="@dimen/_12sdp"/>
+                android:background="@color/linecolor"
+                app:layout_constraintTop_toBottomOf="@id/gsttxt" />
+
             <TextView
                 android:id="@+id/paytxt"
                 android:layout_width="wrap_content"
@@ -172,29 +182,32 @@
                 android:textColor="@color/black"
                 android:textSize="@dimen/_12ssp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/view2"/>
+                app:layout_constraintTop_toBottomOf="@id/view2" />
+
             <TextView
+                android:id="@+id/total"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/total"
-                app:layout_constraintTop_toBottomOf="@id/view2"
-                android:text="580.00"
-                android:textSize="@dimen/_12ssp"
-                android:textColor="@color/black"
-                android:fontFamily="@font/montserrat_semibold"
-                app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginTop="@dimen/_14ssp"
-                android:layout_marginEnd="@dimen/_12sdp"/>
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:fontFamily="@font/montserrat_semibold"
+                android:text="580.00"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/view2" />
+
             <View
+                android:id="@+id/view3"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_7sdp"
-                android:id="@+id/view3"
                 android:layout_marginTop="@dimen/_14sdp"
                 android:background="@color/linecolor"
-                app:layout_constraintTop_toBottomOf="@id/paytxt"/>
+                app:layout_constraintTop_toBottomOf="@id/paytxt" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/_49sdp"
@@ -237,6 +250,5 @@
             app:strokeColor="@color/white"
             app:strokeWidth="2dp" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

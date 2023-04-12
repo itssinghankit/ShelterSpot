@@ -1,12 +1,9 @@
 package com.example.shelterspot
 
 import android.content.Intent
-import android.os.Binder
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import com.example.shelterspot.databinding.ActivityMainBinding
-import com.example.shelterspot.databinding.ActivityMainBinding.inflate
+import androidx.appcompat.app.AppCompatActivity
 import com.example.shelterspot.databinding.ActivitySigninBinding
 import com.google.firebase.auth.FirebaseAuth
 
@@ -43,10 +40,7 @@ class Signin : AppCompatActivity() {
                         Toast.makeText(this, "Signin Failed", Toast.LENGTH_SHORT).show()
                     }
                 }
-
         }
-
-
 
     }
 }
