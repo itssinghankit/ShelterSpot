@@ -39,7 +39,6 @@ their properties efficiently.
 
 ## Screenshots
 
-[Insert screenshots of key app screens here]
 
 ## Technology Stack
 
