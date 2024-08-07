@@ -5,4 +5,5 @@
     <string name="Google_Map_API">AIzaSyB1CSlsrNkbRrF_8FJCmMaX-BhTd-KibXg</string>
     <string name="title_activity_hotel_map_loc_set">HotelMapLocSetActivity</string>
     <string name="title_activity_cmap_view">CMapView</string>
+    <string name="hello">hello</string>
 </resources>

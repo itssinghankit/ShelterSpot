@@ -1,7 +1,6 @@
 package com.example.shelterspot.Adapters
 
 import android.content.Context
-import android.icu.text.Transliterator.Position
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -26,7 +25,7 @@ class HomeFragLocAdapter(val arraylist:ArrayList<HotelDetDataClass>,val context:
        val view=LayoutInflater.from(parent.context).inflate(R.layout.home_page_recycleritem,parent,false)
         val viewHolder=Viewholder(view)
         view.setOnClickListener{
-            listener.onitemClicked(viewHolder.adapterPosition)
+            listener.onItemClicked(viewHolder.adapterPosition)
         }
         return viewHolder
 
@@ -49,7 +48,7 @@ class HomeFragLocAdapter(val arraylist:ArrayList<HotelDetDataClass>,val context:
 }
 
 interface onHotelClicked{
-    fun onitemClicked(position:Int){
+    fun onItemClicked(position:Int){
 
     }
 }

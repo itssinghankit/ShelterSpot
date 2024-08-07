@@ -1,22 +1,23 @@
 package fragments
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.shelterspot.Adapters.HomeFragLocAdapter
 import com.example.shelterspot.Adapters.onHotelClicked
-import com.example.shelterspot.CHotelDetails
 import com.example.shelterspot.HotelDetDataClass
 import com.example.shelterspot.databinding.FragmentHomeBinding
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.*
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 
 
-class HomeFragment : Fragment(), onHotelClicked {
+class HomeFragment : androidx.fragment.app.Fragment(), onHotelClicked {
     private lateinit var binding: FragmentHomeBinding
     private lateinit var database: DatabaseReference
     private lateinit var auth: FirebaseAuth
@@ -49,8 +50,7 @@ class HomeFragment : Fragment(), onHotelClicked {
         arraylist = ArrayList()
         binding.recyclerView.layoutManager =
             LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
-
-
+        
         //for putting data to location recycler view
         fetchLocationRecyclerData()
 
@@ -78,15 +78,16 @@ class HomeFragment : Fragment(), onHotelClicked {
     }
 
     //click handles of location recycler view
-    override fun onitemClicked(position: Int) {
-        super.onitemClicked(position)
 
-        val intent = Intent(
-            context,
-            CHotelDetails::class.java
-        )      //this ki jagah context ya activity use kar skte hai
-        intent.putExtra("userId", arraylist[position].userId)
-        startActivity(intent)
-    }
+//    override fun onitemClicked(position: Int) {
+//        super.onitemClicked(position)
+//
+//        val intent = Intent(
+//            context,
+//            CHotelDetails::class.java
+//        )      //this ki jagah context ya activity use kar skte hai
+//        intent.putExtra("userId", arraylist[position].userId)
+//        startActivity(intent)
+//    }
 
 }
