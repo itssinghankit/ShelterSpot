@@ -1,6 +1,4 @@
-# Hotel Management Android App
-
-## Overview
+# ShelterSpot
 
 This Android application, developed using Kotlin, XML, and Firebase, offers a comprehensive hotel
 management system with separate interfaces for customers and hotel owners. The app streamlines the
